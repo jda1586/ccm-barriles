@@ -24,7 +24,15 @@ class CCMController extends \BaseController
 
     public function first_step()
     {
-        $this->layout->content = View::make('step_one');
+           $this->layout->content = View::make('step_one');
+    }
+
+    /**
+     * Ir al paso 2
+     */
+    public function step_two()
+    {
+        $this->layout->content = View::make('step_two');
     }
 
 }

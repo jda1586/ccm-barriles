@@ -14,14 +14,22 @@
 <div class="row">
     <div class="col-md-4 col-lg-4 col-sm-12" style="text-align: center; padding-top: 20px;">
         <p><img src="/img/tutorial-icon.png"></p>
-        <p><img src="/img/tutorial.png"></p>
+        <p>
+            <a>
+                <img src="/img/tutorial.png">
+            </a>
+        </p>
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12" style="text-align: center;">
         <img src="/img/logo-barriles.png" style="width: 100%;">
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12" style="text-align: center; padding-top: 20px;">
         <p><img src="/img/iniciar-icon.png"></p>
-        <p><img src="/img/iniciar.png"></p>
+        <p>
+            <a href="{{ URL::route('step.one') }}">
+                <img src="/img/iniciar.png">
+            </a>
+        </p>
     </div>
 </div>
 <div class="row">
