@@ -51,17 +51,56 @@
                 <p style="font-size:16px">visibilidad diferenciada a través de una torre congelada. </p>
             </div>
     </div>
-    <div class="row" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
-      <div style="background-color:#282b30 " >
-        <div class="col-md-6">
-           <p>> Soporta  2 marcas de cerveza </p>
-           <p>> Utiliza barriles de 20 litros  </p>
+    <div class="col-sm-5" style="margin: 0px; padding: 0px; margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+        <div class="row" style="background-color: #282b30; padding: 10px; min-height: 70px">
+            <p>  > Soporta  2 marcas de cerveza </p>
+            <p> > Utiliza barriles de 20 litros  </p>
         </div>
-        <div class="col-md-6">
-           <p>> Unicamente para marca Heineken </p>
-           <p>> Utiliza barriles de 20 litros  </p>
+        <div class="row" style="background-color: #ffffff; min-height: 50px;">
+             <div class="col-md-2" style="padding-top: 10px">
+                {{ HTML::image('/img/tecate.png')}}
+             </div>
+             <div class="col-md-2" style="padding-top: 10px">
+                {{ HTML::image('/img/tecate-light.png')}}
+             </div>
+             <div class="col-md-2" style="padding-top: 18px">
+                {{ HTML::image('/img/indio.png')}}
+             </div>
+             <div class="col-md-2" style="padding-top: 10px">
+                {{ HTML::image('/img/sol.png')}}
+             </div>
+             <div class="col-md-2" style="padding-top: 10px">
+                {{ HTML::image('/img/xx.png')}}
+             </div>
+             <div class="col-md-2" style="padding-top: 10px">
+                {{ HTML::image('/img/xx-amb.png')}}
+             </div>
+
         </div>
-      </div>
+    </div>
+
+    <div class="col-sm-2" style="margin: 0px;  margin-top: 40px; min-height: 50px;">
+        <div class="row" style="background-color: #282b30; min-height: 70px">
+            <div style="min-height: 70px; background-image: url('/img/icon-beer.png'); background-repeat: no-repeat; background-position: center top; background-size: 38px;"></div>
+        </div>
+        <div class="row" style="background-color: #ffffff; min-height: 50px">
+            <div style="min-height: 50px; background-image: url('/img/icon-beer.png'); background-repeat: no-repeat; background-position: center bottom; background-size: 39px;"></div>
+        </div>
+    </div>
+
+    <div class="col-sm-5" style="margin: 0px; padding: 0px; margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+        <div class="row" style="background-color: #282b30;padding: 10px; min-height: 70px">
+            <p> > Unicamente para marca Heineken </p>
+            <p> > Utiliza barriles de 20 litros  </p>
+        </div>
+        <div class="row" style="background-color: #ffffff; min-height: 50px;">
+            <div class="col-md-12" style="padding-top: 5px;">
+                {{ HTML::image('/img/Heineken.png') }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
     </div>
 @stop
 
