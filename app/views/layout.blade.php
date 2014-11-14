@@ -7,7 +7,7 @@
     {{ HTML::style('css/ccm.css') }}
 </head>
 <body>
-    <header>
+    <header style="max-width: 980px; margin: 30px auto 0px auto;">
         @yield('header')
     </header>
     <div>
