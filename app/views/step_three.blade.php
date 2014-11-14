@@ -22,20 +22,26 @@
         </div>
     </div>
     <div class="row" >
-        <div class="col-md-6" style="margin-top: 40px; text-align:center;font-family: ">
+        <div class="col-md-6" style="margin-top: 40px; text-align:center;font-family:Oswald 300; font-size:14px; ">
             <table>
                 <thead>
                     <tr>
-                        <td style="min-width: 100px">SKU</td>
-                        <td style="min-width: 350px">DESCRIPCIÓN</td>
-                        <td>CANTIDAD A ORDENAR</td>
+                        <td style="min-width: 80px">SKU</td>
+                        <td style="min-width: 300px">DESCRIPCIÓN</td>
+                        <td style="min-with: 200px; font-size: 11px;"><p>CANTIDAD A</p><p>ORDENAR</p></td>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr>
+                        <td>41002054</td>
+                        <td>ENFRIADOR DAVID XL (P0003743-A)</td>
+                        <td>2</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6" style="margin-top: 40px;"></div>
+        <div class="col-md-6" style="margin-top: 40px;">
+            <div class=""></div>
+        </div>
     </div>
 @stop
