@@ -22,7 +22,7 @@ class CCMController extends \BaseController
      * @return Response
      */
 
-    public function first_step()
+    public function step_one()
     {
            $this->layout->content = View::make('step_one');
     }
@@ -33,6 +33,11 @@ class CCMController extends \BaseController
     public function step_two()
     {
         $this->layout->content = View::make('step_two');
+    }
+
+    public function step_three()
+    {
+        $this->layout->content = View::make('step_three');
     }
 
 }

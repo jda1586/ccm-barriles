@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 
-body{
+body {
     top: 0;
     left: 0;
     width: 100%;
@@ -11,4 +11,20 @@ body{
     background: url("/img/background.jpg") no-repeat fixed center center;
     font-family: 'Oswald';
     color: white;
+}
+
+table {
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+}
+
+thead {
+    background-color: #ff8a00;
+    font-weight: bold;
+    border-color: #ffffff;
+    width: 100px;
+}
+thead td{
+    border-color: #ffffff;
+    padding: 20px;
 }
