@@ -41,7 +41,11 @@
             <span style="font-size: 50px;">&nbsp;&nbsp;DAVID XL</span>
         </div>
     </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        {{ HTML::image('/img/solo.png') }}
+    </div>
+    <div class="col-md-4">
+        {{ HTML::image('/img/solo.png') }}
+    </div>
 </div>
 @stop
