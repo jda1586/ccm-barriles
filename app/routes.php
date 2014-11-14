@@ -12,3 +12,4 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'CCMController@index']);
+Route::get('/step/one',['as'=>'step.one','uses'=>'CCMController@first_step']);
