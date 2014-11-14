@@ -5,13 +5,63 @@
 @stop
 
 @section('content')
+
     <div class="row">
-        <div class="col-md-12">
-           <p style="font-size: 20px">
-                <span>PASO <span style="color:rgb(255, 138, 0);">1</span> de 6</span>
+        <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+           <p>
+                <span style="margin: 0px 2px 0px 2px;">PASO <span style="color:rgb(255, 138, 0);">1</span> de 6</span>
+                <span> | Elige el equipo de enfriamiento de barril que requieres.</span>
            </p>
+           <p style="font-size:16px;">(Sólo se puede un tipo de equipo a la vez, si requieres pedir de los 2 tipos, hazlo en procesos separados)</p>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row" style="margin-top: 40px; font-family: Oswald 300; font-size:22px; text-align: center; line-height: 15px;">
+        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+            <p style="margin-bottom: 50px;">{{ HTML::image('/img/a-icon.png') }}</p>
+            <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  DAVID XL</span></strong></p>
+            <p style="margin-bottom: 50px;">{{ HTML::image('/img/david-xl.png') }}</p>
 
         </div>
+        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+            <p style="margin-bottom: 50px;">{{ HTML::image('/img/b-icon.png') }}</p>
+            <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  HEINEKEN EXTRA COLD</span></strong></p>
+            <p style="margin-bottom: 50px;">{{ HTML::image('/img/heineken-extra-cold.png') }}</p>
+
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+
+                <div style="background: url('/img/rectangleone.png') repeat-x bottom">
+                    <span>&nbsp;</span>
+                </div>
+                <br/>
+                <p style="font-size:16px">Esta tecnología asegura la calidad y frescura de la cerveza en clientes que desplazan</p>
+                <p style="font-size:16px">entre 4 y 50 barriles totales al mes. </p>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+
+                <div style="background: url('/img/rectangleone.png') repeat-x bottom">
+                    <span>&nbsp;</span>
+                </div>
+                <br/>
+                <p style="font-size:16px">Esta tecnología permite ofrecer cerveza Heineken extra fría, al mismo tiempo que una</p>
+                <p style="font-size:16px">visibilidad diferenciada a través de una torre congelada. </p>
+            </div>
+    </div>
+    <div class="row" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+      <div style="background-color:#282b30 " >
+        <div class="col-md-6">
+           <p>> Soporta  2 marcas de cerveza </p>
+           <p>> Utiliza barriles de 20 litros  </p>
+        </div>
+        <div class="col-md-6">
+           <p>> Unicamente para marca Heineken </p>
+           <p>> Utiliza barriles de 20 litros  </p>
+        </div>
+      </div>
     </div>
 @stop
 
