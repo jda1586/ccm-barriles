@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:300);
+body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-size: cover !important;
+    background: url("/img/background.jpg") no-repeat fixed center center;
+    font-family: 'Oswald';
+    color: white;
+}

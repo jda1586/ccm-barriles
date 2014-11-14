@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>CCM - Barriles</title>
     {{ HTML::style('css/bootstrap.min.css') }}
+    {{ HTML::style('css/ccm.css') }}
 </head>
 <body>
     <header>
