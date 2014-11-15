@@ -1,3 +1,21 @@
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#david').click(function(){
+                $('#b').html("<img src='/img/heineken-extra-cold.png'>");
+                $('#a').html("<img src='/img/david-xl-hover.png'>");
+                $('#continue').css('display','');
+               return false;
+            });
+            $('#heineken').click(function(){
+               $('#b').html("<img src='/img/heineken-extra-cold-hover.png'>");
+               $('#a').html("<img src='/img/david-xl.png'>");
+               $('#continue').css('display','');
+               return false;
+            });
+        });
+    </script>
+@stop
 @section('header')
     <div style="text-align: center; background: url('/img/rectangle.png') repeat-x bottom;">
         <p style="padding: 0px 0px 20px 0px;">{{ HTML::image('/img/logo-ccm.png') }}</p>
@@ -18,18 +36,21 @@
     <br/>
     <br/>
     <div class="row" style="margin-top: 40px; font-family: Oswald 300; font-size:22px; text-align: center; line-height: 15px;">
-        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+        <a href="" id="david">
+        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;" >
             <p style="margin-bottom: 50px;">{{ HTML::image('/img/a-icon.png') }}</p>
             <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  DAVID XL</span></strong></p>
-            <p style="margin-bottom: 50px;">{{ HTML::image('/img/david-xl.png') }}</p>
+            <p style="margin-bottom: 50px;" id="a">{{ HTML::image('/img/david-xl.png') }}</p>
 
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
+        </a>
+        <a href="#" id="heineken">
+        <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;" >
             <p style="margin-bottom: 50px;">{{ HTML::image('/img/b-icon.png') }}</p>
             <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  HEINEKEN EXTRA COLD</span></strong></p>
-            <p style="margin-bottom: 50px;">{{ HTML::image('/img/heineken-extra-cold.png') }}</p>
-
+            <p style="margin-bottom: 50px;" id="b">{{ HTML::image('/img/heineken-extra-cold.png') }}</p>
         </div>
+        </a>
     </div>
     <div class="row">
          <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;">
@@ -109,7 +130,7 @@
         </div>
 
        </div>
-       <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px;">
+       <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px; display: none;" id="continue">
             <a href="{{ URL::route('step.two') }}">
             <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
                {{ HTML::image('/img/mano-right.png') }}

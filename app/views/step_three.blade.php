@@ -1,3 +1,10 @@
+@section('script')
+    <script>
+        $(document).ready(function(){
+
+        });
+    </script>
+@stop
 @section('header')
     <div style="text-align: center; background: url('/img/rectangle.png') repeat-x bottom;">
         <p style="padding: 0px 0px 20px 0px;">{{ HTML::image('/img/logo-ccm.png') }}</p>
