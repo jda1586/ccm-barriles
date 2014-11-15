@@ -12,6 +12,6 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'CCMController@index']);
-Route::any('/step/one',['as'=>'step.one','uses'=>'CCMController@step_one']);
-Route::any('/step/three',['as'=>'step.three','uses'=>'CCMController@step_three']);
+Route::any('/step/one', ['as' => 'step.one', 'uses' => 'CCMController@step_one']);
 Route::any('/step/two', ['as' => 'step.two', 'uses' => 'CCMController@step_two']);
+Route::any('/step/three', ['as' => 'step.three', 'uses' => 'CCMController@step_three']);

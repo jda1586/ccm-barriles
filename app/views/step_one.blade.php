@@ -123,6 +123,3 @@
     </div>
 
 @stop
-
-@section('foolter')
-@stop

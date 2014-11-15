@@ -61,4 +61,32 @@
        </p>
     </div>
 </div>
+<div class=row style="margin-top: 20px;">
+    <div class="col-md-12" style="text-align: center; font-size: 20px;">
+        <p>CANTIDAD DE EQUIPOS</p>
+        <p>{{ Form::text('cantidad',null,['style'=>'color: black;']) }}</p>
+    </div>
+</div>
+<div class="row" >
+   <div class="col-md-6 pull-left" style="margin-top: 40px; padding-left: 0px; margin-left:0px;">
+    <div class="col-md-8"  style="padding-left: 0px; margin-left:0px;">
+       <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-right: 10px;">
+            REGRESAR
+       </button>
+       {{ HTML::image('/img/mano-left.png') }}
+    </div>
+
+   </div>
+   <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px;">
+        <a href="{{ URL::route('step.two') }}">
+        <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
+           {{ HTML::image('/img/mano-right.png') }}
+           <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
+                CONTINUAR CON TU PEDIDO
+           </button>
+
+        </div>
+        </a>
+   </div>
+</div>
 @stop
