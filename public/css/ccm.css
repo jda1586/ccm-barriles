@@ -24,17 +24,25 @@ thead {
     border-color: #ffffff;
     width: 100px;
 }
-thead td{
+
+thead td {
 
     padding: 15px;
     border: 2px solid #ffffff;
     font-weight: bold;
 }
-tbody td{
+
+tbody td {
     font-family: Droid serif;
     padding: 15px;
     border: 1px solid #ffffff;
-    font-size:12px;
+    font-size: 12px;
     color: white;
 
+}
+.grifo-content{
+    border-bottom: 2px transparent solid;
+}
+.grifo-content:hover {
+    border-bottom: 2px orange solid;
 }

@@ -1,41 +1,38 @@
 @section('script')
     <script>
         $(document).ready(function(){
-            $('a.logo').click(function(){
+            $("a.logo").click(function(){
+                var $this = $(this);
                 var logo = $(this).attr('id');
-                var grifo1 = $('#one').data('grifo')
-                var grifo2 = $('#two').data('grifo')
                 var quantity = $('#quantity').val();
-                if(grifo1 === 'none' && grifo2 === 'none'){
-                    $('#one').html('<img src="/img/grifos/'+logo+'.png">').data('grifo',logo);
-                }else if(grifo1 != 'none' && grifo2 === 'none'){
-                    if (logo != grifo1){
-                         $('#two').html('<img src="/img/grifos/'+logo+'.png">').data('grifo',logo);
-                    }else{
-                        $('#one').html('<img src="/img/solo.png">').data('grifo','none');
-                    }
-                }else if(logo === grifo1){
-                    $('#one').html('<img src="/img/solo.png">').data('grifo','none');
-                }else if(logo === grifo2){
-                    $('#two').html('<img src="/img/solo.png">').data('grifo','none');
-                }else if(grifo1 === 'none' && grifo2 != 'none'){
-                    $('#one').html('<img src="/img/grifos/'+logo+'.png">').data('grifo',logo);
+                //
+                if($('#one').attr('data-grifo') == 'none' && $('#two').attr('data-grifo') != $this.attr('id')){
+                    $('#one').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
+                    $this.parent().css('border-bottom','2px orange solid');
+                }else if($('#two').attr('data-grifo') == 'none' && $('#one').attr('data-grifo') != $this.attr('id')){
+                    $('#two').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
+                    $this.parent().css('border-bottom','2px orange solid');
+                }else if(logo == $('#one').attr('data-grifo')){
+                    $('#one').attr('data-grifo','none').html('<img src="/img/solo.png">');
+                    $this.parent().css('border-bottom','2px transparent solid');
+                }else if(logo == $('#two').attr('data-grifo')){
+                    $('#two').attr('data-grifo','none').html('<img src="/img/solo.png">');
+                    $this.parent().css('border-bottom','2px transparent solid');
                 }
-                if(quantity != ' ' && quantity != 0 && grifo1 != 'none' && grifo2 != 'none'){
-                    $('#next').css('display','');
+                //
+                if(quantity != '' && quantity > 0 && $('#one').attr('data-grifo') != 'none' && $('#two').attr('data-grifo') != 'none'){
+                    $('#next').fadeIn('fast');
                 }else{
-                    $('#next').css('display','none');
+                    $('#next').fadeOut('fast');
                 }
                 return false;
             });
-            $('#quantity').blur(function(){
+            $('#quantity').keyup(function($key){
                 var quantity = $(this).val();
-                var grifo1 = $('#one').data('grifo')
-                var grifo2 = $('#two').data('grifo')
-                if(quantity != ' ' && quantity != 0 && grifo1 != 'none' && grifo2 != 'none'){
-                    $('#next').css('display','');
+                if(quantity != '' && quantity > 0 && $('#one').attr('data-grifo') != 'none' && $('#two').attr('data-grifo') != 'none'){
+                    $('#next').fadeIn('fast');
                 }else{
-                    $('#next').css('display','none');
+                    $('#next').fadeOut('fast');
                 }
             });
         });
@@ -58,22 +55,22 @@
     </div>
 </div>
 <div class="row" style="margin-top: 30px;">
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-tecate" class="logo">{{ HTML::image('img/big_logs/tecate.png') }}</a>
     </div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-tecate-light" class="logo">{{ HTML::image('img/big_logs/tecate-light.png') }}</a>
     </div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-indio" class="logo">{{ HTML::image('img/big_logs/indio.png') }}</a>
     </div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-sol" class="logo">{{ HTML::image('img/big_logs/sol.png') }}</a>
     </div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-xxlager" class="logo">{{ HTML::image('img/big_logs/xx.png') }}</a>
     </div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-2 grifo-content" style="text-align: center;">
         <a href="#" id="grifo-ambar" class="logo">{{ HTML::image('img/big_logs/xx-ambar-w.png') }}</a>
     </div>
 </div>
