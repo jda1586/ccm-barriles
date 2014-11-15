@@ -16,29 +16,33 @@
 </div>
 <div class="row" style="margin-top: 30px;">
     <div class="col-md-2" style="text-align: center;">
-        <a href="#">{{ HTML::image('img/tecate.png') }}</a>
+        <a href="#">{{ HTML::image('img/big_logs/tecate.png') }}</a>
     </div>
     <div class="col-md-2" style="text-align: center;">
-        {{ HTML::image('img/tecate-light.png') }}
+        {{ HTML::image('img/big_logs/tecate-light.png') }}
     </div>
     <div class="col-md-2" style="text-align: center;">
-        {{ HTML::image('img/indio.png') }}
+        {{ HTML::image('img/big_logs/indio.png') }}
     </div>
     <div class="col-md-2" style="text-align: center;">
-        {{ HTML::image('img/sol.png') }}
+        {{ HTML::image('img/big_logs/sol.png') }}
     </div>
     <div class="col-md-2" style="text-align: center;">
-        {{ HTML::image('img/xx.png') }}
+        {{ HTML::image('img/big_logs/xx.png') }}
     </div>
     <div class="col-md-2" style="text-align: center;">
-        {{ HTML::image('img/xx-ambar-w.png') }}
+        {{ HTML::image('img/big_logs/xx-ambar-w.png') }}
     </div>
 </div>
 <div class="row" style="margin-top: 50px;">
-    <div class="col-md-4">
-        <div class="row" style="vertical-align: middle;">
-            {{ HTML::image('/img/a-icon.png') }}
-            <span style="font-size: 50px;">&nbsp;&nbsp;DAVID XL</span>
+    <div class="col-md-4 col-sm-12">
+        <div class="row" style="vertical-align: middle; text-align: center;">
+            <div class="col-md-4 col-sm-4">
+                {{ HTML::image('/img/a-icon.png') }}
+            </div>
+            <div class="col-md-8 col-sm-8" style="padding-top: 8px; font-weight: bold;">
+                <span style="font-size: 50px;">&nbsp;DAVID XL</span>
+            </div>
         </div>
     </div>
     <div class="col-md-4">
@@ -46,6 +50,15 @@
     </div>
     <div class="col-md-4">
         {{ HTML::image('/img/solo.png') }}
+    </div>
+</div>
+<div class="row" style="width: 100%; height: 17px; background-image: url('/img/rectangule-2.png')"></div>
+<div class="row">
+    <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+       <p>
+            <span style="margin: 0px 2px 0px 2px;">PASO <span style="color: #FF8A00;">3</span> de 6</span>
+            <span> | Elige la cantidad de equipos que requieres para tu combo de marcas seleccionado.</span>
+       </p>
     </div>
 </div>
 @stop
