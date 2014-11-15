@@ -78,7 +78,7 @@
 
    </div>
    <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px;">
-        <a href="{{ URL::route('step.two') }}">
+        <a href="{{ URL::route('step.three') }}">
         <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
            {{ HTML::image('/img/mano-right.png') }}
            <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
