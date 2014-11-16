@@ -1,6 +1,18 @@
 @section('script')
     <script>
         $(document).ready(function(){
+            $(".grifo-content").mouseenter(function(){
+                var $this = $(this);
+                if($('#one').attr('data-grifo') != $this.find('.logo').attr('id') && $('#two').attr('data-grifo') != $this.find('.logo').attr('id')){
+                    $this.css('border-bottom','2px orange solid');
+                }
+            });
+            $(".grifo-content").mouseleave(function(){
+                var $this = $(this);
+                if($('#one').attr('data-grifo') != $this.find('.logo').attr('id') && $('#two').attr('data-grifo') != $this.find('.logo').attr('id')){
+                    $this.css('border-bottom','2px transparent solid');
+                }
+            });
             $("a.logo").click(function(){
                 var $this = $(this);
                 var logo = $(this).attr('id');

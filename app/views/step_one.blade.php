@@ -25,7 +25,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+        <div class="col-md-12" style="margin-top: 40px; font-family: 'Droid serif'; font-size:18px; text-align: center; line-height: 15px;">
            <p>
                 <span style="margin: 0px 2px 0px 2px;">PASO <span style="color:rgb(255, 138, 0);">1</span> de 6</span>
                 <span> | Elige el equipo de enfriamiento de barril que requieres.</span>
@@ -35,7 +35,7 @@
     </div>
     <br/>
     <br/>
-    <div class="row" style="margin-top: 40px; font-family: Oswald 300; font-size:22px; text-align: center; line-height: 15px;">
+    <div class="row" style="margin-top: 40px; font-family: 'Oswald'; font-size:22px; text-align: center; line-height: 15px;">
         <a href="" id="david">
         <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;" >
             <p style="margin-bottom: 50px;">{{ HTML::image('/img/a-icon.png') }}</p>
