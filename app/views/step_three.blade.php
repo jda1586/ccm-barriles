@@ -23,10 +23,12 @@
     <div class="row">
     @if(1)
         <div class="col-md-12" style="margin-top: 40px; font-family: Oswald 300; font-size:33px; text-align: center; line-height: 15px;">
-            <span>{{ HTML::image('/img/'. ((Session::get('barril')=='david')?'a':'b') .'-icon.png') }}</span>
-           <strong> <span style="margin-left: 15px;">{{ (Session::get('barril')=='david')?'DAVID XL':'HEINEKEN' }} / {{ Session::get('number') }}  EQUIPOS / </span></strong>
-            <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/tecate-light.png') }}</span>
-            <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/sol.png') }}</span>
+            <span>{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
+           <strong> <span style="margin-left: 15px;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }} / {{ $number }} EQUIPOS / </span></strong>
+            <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/'. $logo .'.png') }}</span>
+            @if($logo_2)
+                <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/'.$logo_2.'.png') }}</span>
+            @endif
         </div>
     </div>
     <div class="row" >
@@ -44,7 +46,7 @@
                         <tr>
                             <td>{{$piece->sku}}</td>
                             <td>{{$piece->material}}</td>
-                            <td>{{$piece->quantity * $Number}}</td>
+                            <td>{{$piece->quantity * $number}}</td>
                         </tr>
                     @endforeach
                 </tbody>

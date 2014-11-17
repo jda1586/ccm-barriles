@@ -44,10 +44,11 @@ class CCMController extends \BaseController
     public function step_three()
     {
         if (Session::has('logo_one') && Session::has('number')) {
-            $pieces = BarrelDetail::whereId(44);
+            $pieces = BarrelDetail::where('barrel_model_id', Session::get('barril') == 'david' ? 1:2 )->get();
             $number = Session::get('number');
-            $logos = Session::get('logos');
-            $this->layout->content = View::make('step_three', array('pieces' => $pieces, 'logos' => $logos, 'number' => $number));
+            $logo = Session::get('logo_one');
+            $logo_2 = Session::get('logo_two');
+            $this->layout->content = View::make('step_three', array('pieces' => $pieces, 'logo' => $logo, 'number' => $number,'logo_2'=>$logo_2));
         } else {
             return Redirect::route('step.two');
         }
