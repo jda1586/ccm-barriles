@@ -18,21 +18,15 @@
                 var logo = $(this).attr('id');
                 var quantity = $('#quantity').val();
                 //
-                if($('#one').attr('data-grifo') == 'none' && $('#two').attr('data-grifo') != $this.attr('id')){
+                if($('#one').attr('data-grifo') == 'none'){
                     $('#one').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
-                    $this.parent().css('border-bottom','2px orange solid');
-                }else if($('#two').attr('data-grifo') == 'none' && $('#one').attr('data-grifo') != $this.attr('id')){
-                    $('#two').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
                     $this.parent().css('border-bottom','2px orange solid');
                 }else if(logo == $('#one').attr('data-grifo')){
                     $('#one').attr('data-grifo','none').html('<img src="/img/grifos/Heineken-limpio.png">');
                     $this.parent().css('border-bottom','2px transparent solid');
-                }else if(logo == $('#two').attr('data-grifo')){
-                    $('#two').attr('data-grifo','none').html('<img src="/img/grifos/Heineken-limpio.png">');
-                    $this.parent().css('border-bottom','2px transparent solid');
                 }
                 //
-                if(quantity != '' && quantity > 0 && $('#one').attr('data-grifo') != 'none' && $('#two').attr('data-grifo') != 'none'){
+                if(quantity != '' && quantity > 0 && $('#one').attr('data-grifo') != 'none'){
                     $('#next').fadeIn('fast');
                 }else{
                     $('#next').fadeOut('fast');
@@ -85,7 +79,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-8" id="two" data-grifo="none" style="text-align: center;">
+    <div class="col-md-8" id="one" data-grifo="none" style="text-align: center;">
         {{ HTML::image('/img/grifos/Heineken-limpio.png') }}
     </div>
 </div>

@@ -1,5 +1,6 @@
 <?php
 
-class Barrel extends \Eloquent {
-	protected $fillable = [];
+class Barrel extends \Eloquent
+{
+    protected $fillable = [];
 }
