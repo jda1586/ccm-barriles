@@ -59,7 +59,7 @@ return array(
 			'username'  => 'root',
 //            'username'  => 'moctezuma',
 			'password'  => 'iFREIT74',
-//			'password'  => 'yamihikari',
+//			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
