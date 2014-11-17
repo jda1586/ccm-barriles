@@ -82,7 +82,7 @@
 <div class="row" style="margin-top: 30px;">
     <div class="col-md-5"></div>
     <div class="col-md-2 col-sm-12 grifo-content" style="text-align: center;">
-        <a href="#" id="Heineken-extracold" class="logo">{{ HTML::image('img/big_logs/Heineken.png') }}</a>
+        <a href="#" id="Heineken-extracold" class="logo">{{ HTML::image('img/big_logs/heineken.png') }}</a>
     </div>
     <div class="col-md-5"></div>
 </div>
