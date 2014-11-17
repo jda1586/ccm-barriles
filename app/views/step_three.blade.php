@@ -21,6 +21,7 @@
         </div>
     </div>
     <div class="row">
+    @if(1)
         <div class="col-md-12" style="margin-top: 40px; font-family: Oswald 300; font-size:33px; text-align: center; line-height: 15px;">
             <span>{{ HTML::image('/img/a-icon.png') }}</span>
            <strong> <span style="margin-left: 15px;">DAVID XL / 10 EQUIPOS / </span></strong>
@@ -39,14 +40,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>41002054</td>
-                        <td>ENFRIADOR DAVID XL (P0003743-A)</td>
-                        <td>2</td>
-                    </tr>
+                    @foreach($pieces as $piece)
+                        <tr>
+                            <td>{{$piece->sku}}</td>
+                            <td>{{$piece->material}}</td>
+                            <td>{{$piece->quantity * $Number}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
+    @else
+    @endif
         <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: Oswald 300; line-height: 20px">
             <div style="width: 480px; height: auto;">
                 {{ HTML::image('/img/DAVID XXL.jpg',null,['width'=>'480px;','height'=>'auto;']) }}
