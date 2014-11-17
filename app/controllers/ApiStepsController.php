@@ -34,4 +34,10 @@ class ApiStepsController extends \BaseController
             return Response::json(['resp' => false]);
         }
     }
+
+    public function get_data()
+    {
+        $data = BarrelDetail::find(Input::get('id'));
+        return Response::json($data);
+    }
 }

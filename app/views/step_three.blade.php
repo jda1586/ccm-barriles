@@ -1,7 +1,31 @@
 @section('script')
     <script>
         $(document).ready(function(){
+            $('.table-link').click(function(){
+                var id = $(this).attr('id');
+                $.ajax({
+                    type: 'get',
+                    url:"{{ URL::route('api.step.two.data') }}",
+                    data: { id: id },
+                    dataType: "json"
+                }).done(function(data){
+                     alert((data['photo_number']))
+                    if(data['barrel_id'] == 1){
+                        $('#images_here').html('<img src="/img/david_pieces/'+(data["photo_number"])+'" style="width:480px; height="auto;">')
+                        $('#image').html('<img src="/img/david_pieces/'+(data["image"])+'" style="width:100px; height:auto;" >')
+                    }else{
+                        $('#images_here').html('<img src="/img/heineken_pieces/'+data["photo_number"]+'" style="width:480px; height="auto;">')
+                        $('#image').html('<img src="/img/heineken_pieces/'+data["image"]+'" style="width:100px; height:auto;"')
+                    }
+                    $('#piece_name').html(data['material']);
+                    $('#cantidad').html(data['quantity']);
+                    $('#precio').html(data['unit_price']);
+                    $('#descripcion').html(data['description']);
 
+                }).fail(function(data){
+                    alert( "Error de conexion" );
+                })
+            })
         });
     </script>
 @stop
@@ -43,10 +67,11 @@
                 </thead>
                 <tbody>
                     @foreach($pieces as $piece)
-                        <tr>
+                        <tr id="{{ $piece->id }}" class="table-link">
                             <td>{{$piece->sku}}</td>
                             <td>{{$piece->material}}</td>
                             <td>{{$piece->quantity * $number}}</td>
+
                         </tr>
                     @endforeach
                 </tbody>
@@ -55,18 +80,27 @@
     @else
     @endif
         <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: Oswald 300; line-height: 20px">
-            <div style="width: 480px; height: auto;">
-                {{ HTML::image('/img/DAVID XXL.jpg',null,['width'=>'480px;','height'=>'auto;']) }}
+            <div style="width: 480px; height: auto;" id="images_here">
+                @if($pieces[0]->barrel_id == 1)
+                    {{ HTML::image('/img/david_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height :auto;']) }}
+                @else
+                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height :auto;']) }}
+                @endif
+
             </div>
-            <div style="width: 480px; height: 180px; background-color: white">
+            <div style="width: 480px; min-height: 200px; background-color: white">
                 <div class="col-md-9" style="margin-top: 20px;">
-                    <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} ENFRIADOR DAVID XL (P0003743-A)</p>
-                    <p>Cantidad del equipo: <span style="color: #ff8a00;">1</span></p>
-                    <p>Precio unitario: <span style="color: #ff8a00;">1</span></p>
-                    <p>Descripcion: <span style="color: #ff8a00;">1</span></p>
+                    <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} <span id="piece_name">{{ $pieces[0]->material }}</span></p>
+                    <p>Cantidad del equipo: <span style="color: #ff8a00;" id="cantidad">{{ $pieces[0]->quantity }}</span></p>
+                    <p>Precio unitario: <span style="color: #ff8a00;" id="precio">{{ $pieces[0]->unit_price }}</span></p>
+                    <p>Descripcion: <span style="color: #ff8a00;" id="descripcion">{{ $pieces[0]->description }}</span></p>
                 </div>
-                <div class="col-md-3" style="margin-top: 20px;">
-                     {{ HTML::image('/img/item-thumb.jpg',null,['class'=>'pull-right']) }}
+                <div class="col-md-3" style="margin-top: 20px;width:100px; height:auto;" id="image">
+                @if( $pieces[0]->barrel_id == 1 )
+                     {{ HTML::image('/img/david_pieces/'.$pieces[0]->image,null,['class'=>'pull-right','style'=>'width:100px; height:auto;']) }}
+                @else
+                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->image,null,['class'=>'pull-right','style'=>'width:100px; height:auto;']) }}
+                @endif
                 </div>
             </div>
         </div>

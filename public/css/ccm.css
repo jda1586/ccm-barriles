@@ -43,3 +43,6 @@ tbody td {
 .grifo-content{
     border-bottom: 2px transparent solid;
 }
+tr {
+    cursor: pointer;
+}
