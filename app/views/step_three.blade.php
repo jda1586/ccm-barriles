@@ -23,8 +23,8 @@
     <div class="row">
     @if(1)
         <div class="col-md-12" style="margin-top: 40px; font-family: Oswald 300; font-size:33px; text-align: center; line-height: 15px;">
-            <span>{{ HTML::image('/img/a-icon.png') }}</span>
-           <strong> <span style="margin-left: 15px;">DAVID XL / 10 EQUIPOS / </span></strong>
+            <span>{{ HTML::image('/img/'. ((Session::get('barril')=='david')?'a':'b') .'-icon.png') }}</span>
+           <strong> <span style="margin-left: 15px;">{{ (Session::get('barril')=='david')?'DAVID XL':'HEINEKEN' }} / {{ Session::get('number') }}  EQUIPOS / </span></strong>
             <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/tecate-light.png') }}</span>
             <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/sol.png') }}</span>
         </div>
