@@ -19,6 +19,7 @@ Route::any('/step/three', ['as' => 'step.three', 'uses' => 'CCMController@step_t
 
 //api
 Route::any('api/step/one', ['as' => 'api.step.one', 'uses' => 'ApiStepsController@step_one']);
+Route::any('api/step/two', ['as' => 'api.step.two', 'uses' => 'ApiStepsController@step_two']);
 
 //punto de control
 Route::get('flush', ['as' => 'flush', 'uses' => 'CCMController@flush']);

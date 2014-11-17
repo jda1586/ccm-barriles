@@ -47,6 +47,26 @@
                     $('#next').fadeOut('fast');
                 }
             });
+            $("#continuar").click(function(){
+                var $this = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ URL::route('api.step.two') }}",
+                    data: {
+                        logo_one: $('#one').attr('data-grifo'),
+                        logo_two: $('#two').attr('data-grifo'),
+                        number: $("input[name=cantidad]").val()
+                        }
+                }).done(function( data ) {
+                    if(data.resp){
+                        window.location = "{{ URL::route('step.three') }}"
+                    }else{
+                        alert( "Error al seleccionar el barril" );
+                    }
+                }).fail(function(data) {
+                    alert( "Error de conexion" );
+                });
+            });
         });
     </script>
 @stop
@@ -131,15 +151,12 @@
     </a>
    </div>
    <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px; display: none;" id="next">
-        <a href="{{ URL::route('step.three') }}">
         <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
            {{ HTML::image('/img/mano-right.png') }}
-           <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
+           <button id="continuar" style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
                 CONTINUAR CON TU PEDIDO
            </button>
-
         </div>
-        </a>
    </div>
 </div>
 @stop

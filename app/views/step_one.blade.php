@@ -24,9 +24,9 @@
                     data: { barril: barril }
                 }).done(function( data ) {
                     if(data.resp){
-                        window.location = "{{ URL::route('step.two') }}"
+                        window.location = "{{ URL::route('step.three') }}"
                     }else{
-                        alert( "Error al seleccionar el barril" );
+                        alert( barril+" Error al seleccionar el barril" );
                     }
                 }).fail(function(data) {
                     alert( "Error de conexion" );
@@ -150,15 +150,12 @@
 
        </div>
        <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px; display: none;" id="continue">
-            {{--<a href="{{ URL::route('step.two') }}">--}}
             <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
                {{ HTML::image('/img/mano-right.png') }}
                <button id="continuar" style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
                     CONTINUAR CON TU PEDIDO
                </button>
-
             </div>
-            {{--</a>--}}
        </div>
     </div>
 

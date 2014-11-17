@@ -43,20 +43,32 @@ class CCMController extends \BaseController
      */
     public function step_three()
     {
-        $pieces = BarrelDetail::whereId(44);
-        $number = Session::get('number');
-        $logos = Session::get('logos');
-        $this->layout->content = View::make('step_three',array('pieces'=>$pieces,'logos'=>$logos,'number'=>$number));
+        if (Session::has('logo_one') && Session::has('number')) {
+            $pieces = BarrelDetail::whereId(44);
+            $number = Session::get('number');
+            $logos = Session::get('logos');
+            $this->layout->content = View::make('step_three', array('pieces' => $pieces, 'logos' => $logos, 'number' => $number));
+        } else {
+            return Redirect::route('step.two');
+        }
     }
 
+    /**
+     * Ir al paso cuatro
+     */
     public function step_four()
     {
 
     }
 
+    /**
+     * Elimina las variables de session
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function flush()
     {
         Session::clear();
+        Session::flush();
         return Redirect::route('step.one');
     }
 
