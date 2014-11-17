@@ -44,7 +44,7 @@ class CCMController extends \BaseController
     public function step_three()
     {
         if (Session::has('logo_one') && Session::has('number')) {
-            $pieces = BarrelDetail::where('barrel_model_id', ((Session::get('barril') == 'david') ? 1 : 2))->get();
+            $pieces = BarrelDetail::where('barrel_id', ((Session::get('barril') == 'david') ? 1 : 2))->get();
             $this->layout->content = View::make('step_three', array(
                 'pieces' => $pieces,
                 'logo' => Session::get('logo_one'),

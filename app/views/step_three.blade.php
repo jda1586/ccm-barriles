@@ -9,13 +9,12 @@
                     data: { id: id },
                     dataType: "json"
                 }).done(function(data){
-                     alert((data['photo_number']))
                     if(data['barrel_id'] == 1){
-                        $('#images_here').html('<img src="/img/david_pieces/'+(data["photo_number"])+'" style="width:480px; height="auto;">')
-                        $('#image').html('<img src="/img/david_pieces/'+(data["image"])+'" style="width:100px; height:auto;" >')
+                        $('#images_here').html('<div class="col-md-12"><img src="/img/david_pieces/'+(data["photo_number"])+'" style="width:480px; height:auto;"></div>');
+                        $('#image').html('<img src="/img/david_pieces/'+(data["image"])+'" style="width:100px; height:auto;" >');
                     }else{
-                        $('#images_here').html('<img src="/img/heineken_pieces/'+data["photo_number"]+'" style="width:480px; height="auto;">')
-                        $('#image').html('<img src="/img/heineken_pieces/'+data["image"]+'" style="width:100px; height:auto;"')
+                        $('#images_here').html('<div class="col-md-12"><img src="/img/heineken_pieces/'+data["photo_number"]+'" style="width:480px; height:auto;"></div>');
+                        $('#image').html('<img src="/img/heineken_pieces/'+data["image"]+'" style="width:100px; height:auto;">');
                     }
                     $('#piece_name').html(data['material']);
                     $('#cantidad').html(data['quantity']);
@@ -45,7 +44,6 @@
         </div>
     </div>
     <div class="row">
-    @if(1)
         <div class="col-md-12" style="margin-top: 40px; font-family: Oswald 300; font-size:33px; text-align: center; line-height: 15px;">
             <span>{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
            <strong> <span style="margin-left: 15px;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }} / {{ $number }} EQUIPOS / </span></strong>
@@ -67,28 +65,37 @@
                 </thead>
                 <tbody>
                     @foreach($pieces as $piece)
-                        <tr id="{{ $piece->id }}" class="table-link">
-                            <td>{{$piece->sku}}</td>
-                            <td>{{$piece->material}}</td>
-                            <td>{{$piece->quantity * $number}}</td>
-
-                        </tr>
+                        @if(explode('_',$piece->image)[0] == 'LENS' || explode('_',$piece->image)[0] == 'MANERAL')
+                            @if( strtolower($piece->image) == strtolower(explode('_',$piece->image)[0].'_'.$logo.'.jpg') || strtolower($piece->image) == strtolower(explode('_',$piece->image)[0].'_'.$logo_2.'.jpg'))
+                                <tr id="{{ $piece->id }}" class="table-link">
+                                    <td>{{$piece->sku}}</td>
+                                    <td>{{$piece->material}}</td>
+                                    <td>{{$piece->quantity * $number}}</td>
+                                </tr>
+                            @endif
+                        @else
+                            <tr id="{{ $piece->id }}" class="table-link">
+                                <td>{{$piece->sku}}</td>
+                                <td>{{$piece->material}}</td>
+                                <td>{{$piece->quantity * $number}}</td>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>
         </div>
-    @else
-    @endif
         <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: Oswald 300; line-height: 20px">
-            <div style="width: 480px; height: auto;" id="images_here">
+            <div style="width: 480px; height: auto;" id="images_here" class="row">
+                <div class="col-md-12">
                 @if($pieces[0]->barrel_id == 1)
-                    {{ HTML::image('/img/david_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height :auto;']) }}
+                    {{ HTML::image('/img/david_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height:auto;']) }}
                 @else
-                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height :auto;']) }}
+                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height:auto;']) }}
                 @endif
-
+                </div>
             </div>
-            <div style="width: 480px; min-height: 200px; background-color: white">
+            <div style="width: 480px; min-height: 200px; background-color: white; margin-left: 1px;" class="row">
+                <div class="col-md-12">
                 <div class="col-md-9" style="margin-top: 20px;">
                     <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} <span id="piece_name">{{ $pieces[0]->material }}</span></p>
                     <p>Cantidad del equipo: <span style="color: #ff8a00;" id="cantidad">{{ $pieces[0]->quantity }}</span></p>
@@ -101,6 +108,7 @@
                 @else
                     {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->image,null,['class'=>'pull-right','style'=>'width:100px; height:auto;']) }}
                 @endif
+                </div>
                 </div>
             </div>
         </div>
