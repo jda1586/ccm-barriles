@@ -19,16 +19,16 @@
                 var quantity = $('#quantity').val();
                 //
                 if($('#one').attr('data-grifo') == 'none' && $('#two').attr('data-grifo') != $this.attr('id')){
-                    $('#one').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
+                    $('#one').attr('data-grifo',logo).attr('data-logo',$(this).data('logo')).html('<img src="/img/grifos/'+logo+'.png">');
                     $this.parent().css('border-bottom','2px orange solid');
                 }else if($('#two').attr('data-grifo') == 'none' && $('#one').attr('data-grifo') != $this.attr('id')){
-                    $('#two').attr('data-grifo',logo).html('<img src="/img/grifos/'+logo+'.png">');
+                    $('#two').attr('data-grifo',logo).attr('data-logo',$(this).data('logo')).html('<img src="/img/grifos/'+logo+'.png">');
                     $this.parent().css('border-bottom','2px orange solid');
                 }else if(logo == $('#one').attr('data-grifo')){
-                    $('#one').attr('data-grifo','none').html('<img src="/img/solo.png">');
+                    $('#one').attr('data-grifo','none').attr('data-logo','none').html('<img src="/img/solo.png">');
                     $this.parent().css('border-bottom','2px transparent solid');
                 }else if(logo == $('#two').attr('data-grifo')){
-                    $('#two').attr('data-grifo','none').html('<img src="/img/solo.png">');
+                    $('#two').attr('data-grifo','none').attr('data-logo','none').html('<img src="/img/solo.png">');
                     $this.parent().css('border-bottom','2px transparent solid');
                 }
                 //
@@ -53,8 +53,8 @@
                     type: "POST",
                     url: "{{ URL::route('api.step.two') }}",
                     data: {
-                        logo_one: $('#one').attr('data-grifo'),
-                        logo_two: $('#two').attr('data-grifo'),
+                        logo_one: $('#one').attr('data-logo'),
+                        logo_two: $('#two').attr('data-logo'),
                         number: $("input[name=cantidad]").val()
                         }
                 }).done(function( data ) {
@@ -88,22 +88,22 @@
 </div>
 <div class="row" style="margin-top: 30px;">
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-tecate" class="logo">{{ HTML::image('img/big_logs/tecate.png') }}</a>
+        <a href="#" id="grifo-tecate" data-logo="tecate" class="logo">{{ HTML::image('img/big_logs/tecate.png') }}</a>
     </div>
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-tecate-light" class="logo">{{ HTML::image('img/big_logs/tecate-light.png') }}</a>
+        <a href="#" id="grifo-tecate-light" data-logo="tecate-light" class="logo">{{ HTML::image('img/big_logs/tecate-light.png') }}</a>
     </div>
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-indio" class="logo">{{ HTML::image('img/big_logs/indio.png') }}</a>
+        <a href="#" id="grifo-indio" class="logo" data-logo="indio">{{ HTML::image('img/big_logs/indio.png') }}</a>
     </div>
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-sol" class="logo">{{ HTML::image('img/big_logs/sol.png') }}</a>
+        <a href="#" id="grifo-sol" class="logo" data-logo="sol">{{ HTML::image('img/big_logs/sol.png') }}</a>
     </div>
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-xxlager" class="logo">{{ HTML::image('img/big_logs/xx.png') }}</a>
+        <a href="#" id="grifo-xxlager" class="logo" data-logo="xx">{{ HTML::image('img/big_logs/xx.png') }}</a>
     </div>
     <div class="col-md-2 grifo-content" style="text-align: center;">
-        <a href="#" id="grifo-ambar" class="logo">{{ HTML::image('img/big_logs/xx-ambar-w.png') }}</a>
+        <a href="#" id="grifo-ambar" class="logo" data-logo="xx-ambar-w">{{ HTML::image('img/big_logs/xx-ambar-w.png') }}</a>
     </div>
 </div>
 <div class="row" style="margin-top: 50px;">
@@ -117,10 +117,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4" id="one" data-grifo="none">
+    <div class="col-md-4" id="one" data-grifo="none" data-logo="none">
         {{ HTML::image('/img/solo.png') }}
     </div>
-    <div class="col-md-4" id="two" data-grifo="none">
+    <div class="col-md-4" id="two" data-grifo="none" data-logo="none">
         {{ HTML::image('/img/solo.png') }}
     </div>
 </div>
