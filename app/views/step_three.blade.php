@@ -26,7 +26,7 @@
             <span>{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
            <strong> <span style="margin-left: 15px;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }} / {{ $number }} EQUIPOS / </span></strong>
             <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/'. $logo .'.png') }}</span>
-            @if($logo_2)
+            @if($logo_2 != 'none')
                 <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/'.$logo_2.'.png') }}</span>
             @endif
         </div>
