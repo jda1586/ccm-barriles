@@ -25,6 +25,7 @@
                     alert( "Error de conexion" );
                 })
             })
+            $('#tools').modal('hide');
         });
     </script>
 @stop
@@ -117,7 +118,7 @@
     <div class="row">
          <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:16px; text-align: center; line-height: 15px;">
            <p style="color: #ff8a00">
-                ¿Ya sabes qué herramientas requieres para tu instalación?  <a href=""> CONSÚLTALAS AQUÍ</a>
+                ¿Ya sabes qué herramientas requieres para tu instalación?  <a href="#" data-toggle="modal" data-target="#tools"> CONSÚLTALAS AQUÍ</a>
            </p>
         </div>
     </div>
@@ -131,7 +132,7 @@
             </div>
            </div>
            <div class="col-md-6" style="margin-top: 40px;margin-bottom: 40px; padding-left: 0px; margin-right:0px;">
-                <a href="{{ URL::route('step.two') }}">
+                <a href="{{ URL::route('step.four') }}">
                 <div class="col-md-8 pull-right"  style="padding-left: 0px; margin-right:-40px;">
                    {{ HTML::image('/img/mano-right.png') }}
                    <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
@@ -140,6 +141,123 @@
 
                 </div>
                 </a>
+           </div>
+           <!-- Modal -->
+           <div class="modal fade" id="tools" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">SIERRA</p>
+                                <p style="font-size: 16px;">Sirve para cortar el tubo roscado.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_sierra.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">TALADRO</p>
+                                <p style="font-size: 16px;">Nos permite utilizar la sierra de perforación.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_taladro.jpg');min-height: 200px; "></div>
+                        </div>
+                     </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 24px;">PINZAS</p>
+                                <p style="font-size: 18px;">Nos sirve en caso de necesitar sujetar algo fuertemente o cortar algun cable.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_pinzas.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">DESTORNILLADOR AUTOMÁTICO DE PRESICIÓN</p>
+                                <p style="font-size: 16px;">Nos sirve para colocar la tornilleria del equipo.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_destornilladorpres.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">TANQUES DE CO2</p>
+                                <p style="font-size: 16px;">Es el engardado de proveernos de CO2 para empujar las cerveza.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_tanqueCO2.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                 <p style="font-size: 22px;">SOPORTE DE CADENA PARA CO2</p>
+                                 <p style="font-size: 16px;">Nos sirve para sujetar el tanque de CO2 y evitar un accidente.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_cadenaCO2.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">SET DE LLAVES ALLEN</p>
+                                <p style="font-size: 16px;">Nos sirve para colocar la tornilleria del equipo.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_allen.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">CALIBRADOR MANOMÉTRICO</p>
+                                <p style="font-size: 16px;">Sirve para conocer y corregir la preción que maneja el DTO.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_calibrador.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                 <p style="font-size: 22px;">DESTORNILLADOR DE ESTRELLA T10, T15 Y PLANO</p>
+                                <p style="font-size: 16px;">Para colocar las piezas añadidas al enfriador.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_t10t15plano.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">AEROSOL DETECTOR DE FUGA DE GAS</p>
+                                 <p style="font-size: 16px;">Sirve para detectar si quedo alguna fuga de CO2.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_aerosol.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">CORTATUBOS PARA EL TUBO DE CO2</p>
+                                 <p style="font-size: 16px;">Para cortar la manguera de CO2.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_cortatubo.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                <p style="font-size: 22px;">SOPORTE DE CADENA PARA CO2</p>
+                                 <p style="font-size: 16px;">Nos sirve para sujetar el tanque de CO2 y evitar un accidente.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_llavenariz.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
+                                 <p style="font-size: 22px;">LLAVE DE TUERCAS 60 MM</p>
+                                 <p style="font-size: 16px;">Sirve para apretar las roscas que soportan la torre.</p>
+                            </div>
+                            <div class="col-md-6" style="background: url('/img/modal/tools_llavetuercas.jpg');min-height: 200px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center; padding: 10px 5px 5px 2px;">
+                                   <p style="font-size: 22px;">SIERRA DE PERFORACIÓN 51 mm (para bar) 57 mm (refrigerador)</p>
+                                     <p style="font-size: 16px;">Sirve para hacer las perforaciones en la parte superior del enfriador para instalar las torres.</p>
+                           </div>
+                           <div class="col-md-6" style="background: url('/img/modal/tools_sierraperf.jpg');min-height: 200px; "></div>
+                        </div>
+                    </div>
+               </div>
            </div>
     </div>
 @stop
