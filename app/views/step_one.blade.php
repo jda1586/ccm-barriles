@@ -5,14 +5,14 @@
             $('#david').click(function(){
                 $('#b').html("<img src='/img/heineken-extra-cold.png'>");
                 $('#a').html("<img src='/img/david-xl-hover.png'>");
-                $('#continue').css('display','');
+                $('#continue').fadeIn('fast');
                 barril = 'david';
-               return false;
+                return false;
             });
             $('#heineken').click(function(){
                $('#b').html("<img src='/img/heineken-extra-cold-hover.png'>");
                $('#a').html("<img src='/img/david-xl.png'>");
-               $('#continue').css('display','');
+               $('#continue').fadeIn('fast');
                barril = 'heineken';
                return false;
             });

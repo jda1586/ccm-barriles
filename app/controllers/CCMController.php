@@ -28,8 +28,10 @@ class CCMController extends \BaseController
      */
     public function step_two()
     {
-        if (Session::has('barril') && Session::get('barril') != 'none') {
+        if (Session::has('barril') && Session::get('barril') == 'david') {
             $this->layout->content = View::make('step_two');
+        } else if (Session::has('barril') && Session::get('barril') == 'heineken') {
+            $this->layout->content = View::make('step_two_b');
         } else {
             return Redirect::route('step.one');
         }
@@ -55,6 +57,7 @@ class CCMController extends \BaseController
     public function flush()
     {
         Session::clear();
+        return Redirect::route('step.one');
     }
 
 }

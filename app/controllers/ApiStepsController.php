@@ -3,6 +3,7 @@
 class ApiStepsController extends \BaseController
 {
     /**
+     * Graba el tipo de barril
      * @return \Illuminate\Http\JsonResponse
      */
     public function step_one()
@@ -12,7 +13,7 @@ class ApiStepsController extends \BaseController
     }
 
     /**
-     *
+     * Graba
      */
     public function step_two()
     {
