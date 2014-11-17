@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"barryvdh/laravel-ide-helper": "~1.11"
+		"barryvdh/laravel-ide-helper": "~1.11",
+		"maatwebsite/excel": "1.*"
 	},
 	"require-dev": {
 	  "way/generators": "~2.0"

@@ -11,7 +11,14 @@
 |
 */
 
+//pasos del app
 Route::get('/', ['as' => 'home', 'uses' => 'CCMController@index']);
 Route::any('/step/one', ['as' => 'step.one', 'uses' => 'CCMController@step_one']);
 Route::any('/step/two', ['as' => 'step.two', 'uses' => 'CCMController@step_two']);
 Route::any('/step/three', ['as' => 'step.three', 'uses' => 'CCMController@step_three']);
+
+//api
+Route::any('api/step/one', ['as' => 'api.step.one', 'uses' => 'ApiStepsController@step_one']);
+
+//punto de control
+Route::get('flush', ['as' => 'flush', 'uses' => 'CCMController@flush']);

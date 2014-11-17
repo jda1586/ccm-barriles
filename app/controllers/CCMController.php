@@ -16,28 +16,42 @@ class CCMController extends \BaseController
     }
 
     /**
-     * Show the form for creating a new resource.
-     * GET /ccm/create
-     *
-     * @return Response
+     * Ir al paso uno
      */
-
     public function step_one()
     {
-           $this->layout->content = View::make('step_one');
+        $this->layout->content = View::make('step_one');
     }
 
     /**
-     * Ir al paso 2
+     * Ir al paso dos
      */
     public function step_two()
     {
-        $this->layout->content = View::make('step_two');
+        if (Session::has('barril') && Session::get('barril') != 'none') {
+            $this->layout->content = View::make('step_two');
+        } else {
+            return Redirect::route('step.one');
+        }
+
     }
 
+    /**
+     * Ir al paso tres
+     */
     public function step_three()
     {
         $this->layout->content = View::make('step_three');
+    }
+
+    public function step_four()
+    {
+
+    }
+
+    public function flush()
+    {
+        Session::clear();
     }
 
 }
