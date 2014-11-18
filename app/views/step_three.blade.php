@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12" style="margin-top: 40px; font-family: Oswald 300; font-size:33px; text-align: center; line-height: 15px;">
+        <div class="col-md-12" style="margin-top: 40px; font-family: 'Oswald'; font-size:33px; text-align: center; line-height: 15px;">
             <span>{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
            <strong> <span style="margin-left: 15px;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }} / {{ $number }} EQUIPOS / </span></strong>
             <span style="margin-left:20px;">{{ HTML::image('/img/big_logs/'. $logo .'.png') }}</span>
@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="row" >
-        <div class="col-md-6" style="margin: 40px 0px 0px 0px; text-align:center;font-family:Oswald 300; font-size:14px; padding:0px; ">
+        <div class="col-md-6" style="margin: 40px 0px 0px 0px; text-align:center;font-family:'Oswald'; font-size:14px; padding:0px; ">
             <table>
                 <thead>
                     <tr>
@@ -85,7 +85,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: Oswald 300; line-height: 20px">
+        <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: 'Oswald'; line-height: 20px">
             <div style="width: 480px; height: auto;" id="images_here" class="row">
                 <div class="col-md-12">
                 @if($pieces[0]->barrel_id == 1)
