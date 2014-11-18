@@ -51,7 +51,7 @@ $(document).ready(function(){
 <div class="row" style="margin-top: 50px;">
     <div class="col-md-12 text-center" style="padding-left: 0px; margin-right:-40px;">
         {{ HTML::image('/img/mano-right.png') }}
-        <a href="{{ URL::route('step.one') }}">
+        <a href="{{ URL::route('flush') }}">
             <button style="background: url('/img/boton.png');width:217px;height:45px;color: #ffd19a; margin-left: 10px;">
                 HACER NUEVO PEDIDO
             </button>
