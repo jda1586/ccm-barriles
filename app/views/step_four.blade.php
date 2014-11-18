@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12" style="margin-top: 40px; padding-bottom: 30px; font-family: Oswald 300; font-size:22px; text-align: center; background: url('/img/rectangule-2.png') repeat-x bottom;">
+        <div class="col-md-12" style="margin-top: 40px; padding-bottom: 30px; font-family: 'Oswald'; font-size:22px; text-align: center; background-size: 2px !important; background: url('/img/rectangule-2.png') repeat-x bottom;">
             <span >{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
             <span style="font-size: 40px;"><strong>{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD ' }} <span style="font-size: 50px;">|</span></strong> </span>
            <strong> TU PEDIDO SON <span style=" color:#FF8A00;"> {{ $number }} </span> EQUIPOS <span style="color: #FF8A00;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }}</span>
