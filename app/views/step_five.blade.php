@@ -6,17 +6,10 @@
 @section('script')
 <script>
 $(document).ready(function(){
-alert('lol');
-    $.ajax({
-        type: "GET",
-        url: "{{ URL::route('step.five.excel') }}",
-        data: {},
-        isLocal: true
-    }).done(function( data ) {
-
-    }).fail(function(data) {
-        alert( "Error de conexion" );
-    });
+    var delay=2000;//1 seconds
+    setTimeout(function(){
+        window.location = '{{ URL::route('step.five.excel') }}';
+    },delay);
 });
 </script>
 @stop
