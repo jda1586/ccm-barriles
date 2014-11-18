@@ -18,6 +18,7 @@ Route::any('/step/two', ['as' => 'step.two', 'uses' => 'CCMController@step_two']
 Route::any('/step/three', ['as' => 'step.three', 'uses' => 'CCMController@step_three']);
 Route::any('/step/four', ['as' => 'step.four', 'uses' => 'CCMController@step_four']);
 Route::any('/step/five', ['as' => 'step.five', 'uses' => 'CCMController@step_five']);
+Route::any('/step/five/excel', ['as' => 'step.five.excel', 'uses' => 'CCMController@excel']);
 
 //api
 Route::any('api/step/one', ['as' => 'api.step.one', 'uses' => 'ApiStepsController@step_one']);
