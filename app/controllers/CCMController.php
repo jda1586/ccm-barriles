@@ -124,7 +124,7 @@ class CCMController extends \BaseController
                     if ($piece->pep == 'Inversión') {
                         $inversion += $piece->quantity * Session::get('number') * $piece->unit_price;
                     } else {
-                        $gasto += $$piece->quantity * Session::get('number') * $piece->unit_price;
+                        $gasto += $piece->quantity * Session::get('number') * $piece->unit_price;
                     }
                 }
             } else {
