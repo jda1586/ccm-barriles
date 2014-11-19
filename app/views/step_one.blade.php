@@ -26,7 +26,7 @@
                     data: { barril: barril }
                 }).done(function( data ) {
                     if(data.resp){
-                        window.location = "{{ URL::route('step.three') }}"
+                        window.location = "{{ URL::route('step.two') }}"
                     }else{
                         alert( barril+" Error al seleccionar el barril" );
                     }
