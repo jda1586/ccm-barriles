@@ -82,7 +82,7 @@
 <div class="row" style="margin-top: 30px;">
     <div class="col-md-5"></div>
     <div class="col-md-2 col-sm-12 grifo-content" style="text-align: center;">
-        <a href="#" id="Heineken" class="logo">{{ HTML::image('img/big_logs/heineken.png') }}</a>
+        <a href="#" id="heineken" class="logo">{{ HTML::image('img/big_logs/heineken.png') }}</a>
     </div>
     <div class="col-md-5"></div>
 </div>
@@ -114,7 +114,7 @@
 <div class=row style="margin-top: 20px;">
     <div class="col-md-12" style="text-align: center; font-size: 20px;">
         <p>CANTIDAD DE EQUIPOS</p>
-        <p>{{ Form::text('cantidad',null,['style'=>'color: black;','id'=>'quantity']) }}</p>
+         <p>{{ Form::text('cantidad',null,['style'=>'color: black; width:50px; text-align:center; color: orange; ','id'=>'quantity']) }}</p>
     </div>
 </div>
 <div class="row" >
