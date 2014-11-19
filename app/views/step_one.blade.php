@@ -137,7 +137,7 @@
         </div>
         <div class="row" style="background-color: #ffffff; min-height: 50px;">
             <div class="col-md-12" style="padding-top: 5px;">
-                {{ HTML::image('heineken.png') }}
+                {{ HTML::image('/img/heineken.png') }}
             </div>
         </div>
     </div>
