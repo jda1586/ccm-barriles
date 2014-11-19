@@ -26,6 +26,7 @@
 
                 }).fail(function(data){
                     alert( "Error de conexion" );
+                    $('#modified').attr('style','background-color: transparent;').removeAttr('id').children('td').attr('style','color:white;');
                 })
             })
             $('#tools').modal('hide');
