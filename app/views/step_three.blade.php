@@ -54,14 +54,20 @@
             @endif
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6" style="margin: 40px 0px 0px 0px; text-align:center;font-family:'Oswald'; font-size:14px; padding:0px; color: #ff8a00; ">
+            <strong><p>* PUEDES SELECCIONAR LOS MATERIALES</p></strong>
+            <strong><p>EN EL LISTADO SIGUIENTE PARA UBICARLOS EN EL DIAGRAMA</p></strong>
+        </div>
+    </div>
     <div class="row" >
-        <div class="col-md-6" style="margin: 40px 0px 0px 0px; text-align:center;font-family:'Oswald'; font-size:14px; padding:0px; ">
+        <div class="col-md-6" style="margin: 0px 0px 0px 0px; text-align:center;font-family:'Oswald'; font-size:14px; padding:0px; ">
             <table>
                 <thead>
                     <tr>
                         <td style="min-width: 80px">SKU</td>
-                        <td style="min-width: 300px">DESCRIPCIÓN</td>
-                        <td style="min-with: 200px; font-size: 11px;"><p>CANTIDAD A</p><p>ORDENAR</p></td>
+                        <td style="width: 350px">DESCRIPCIÓN</td>
+                        <td style="min-with: 200px; font-size: 11px;"><p>CANTIDAD</p><p>A ORDENAR</p></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,7 +91,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6" style="margin: 40px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: 'Oswald'; line-height: 20px">
+        <div class="col-md-6" style="margin: 0px 0px 10px 0px; padding: 0; color: #000000; font-size: 18px; font-family: 'Oswald'; line-height: 20px">
             <div style="width: 480px; height: auto;" id="images_here" class="row">
                 <div class="col-md-12">
                 @if($pieces[0]->barrel_id == 1)

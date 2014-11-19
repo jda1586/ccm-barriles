@@ -21,24 +21,26 @@ table {
 thead {
     background-color: #ff8a00;
     font-weight: bold;
-    border-color: #ffffff;
-    width: 100px;
+
+    width: 100%;
 }
 
 thead td {
 
-    padding: 15px;
-    border: 2px solid #ffffff;
+    padding: 10px;
     font-weight: bold;
 }
 
 tbody td {
     font-family: Droid serif;
     padding: 15px;
-    border: 1px solid #ffffff;
     font-size: 12px;
     color: white;
 
+}
+tbody tr:hover td{
+    color: #ff8a00 ;
+    background-color: white;
 }
 .grifo-content{
     border-bottom: 2px transparent solid;

@@ -8,7 +8,7 @@
         <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
            <p>
                 <span style="margin: 0px 2px 0px 2px;">PASO <span style="color:rgb(255, 138, 0);">5</span> de 6</span>
-                <span> |  Descarga un archivo de EXCEL con la lista de materiales para hacer tu pedido en SAP. </span>
+                <span> | Revisa que los datos de la lista coincida con el de tu pedido. </span>
            </p>
         </div>
     </div>
@@ -26,11 +26,11 @@
                 <thead>
                     <tr>
                         <td style="min-width: 80px">SKU</td>
-                        <td style="min-width: 300px">DESCRIPCIÓN</td>
+                        <td style="min-width: 300px">MATERIAL</td>
                         <td style="min-width: 100px">PRECIO UNITARIO</td>
-                        <td style="min-with: 100px; font-size: 11px;">CANTIDAD</td>
-                        <td style="min-with: 100px; font-size: 11px;">TOTAL</td>
-                        <td style="min-with: 100px; font-size: 11px;">TIPO</td>
+                        <td style="min-with: 100px;">CANTIDAD A ORDENAR</td>
+                        <td style="min-with: 100px;">PRESUPUESTO REQUERIDO</td>
+                        <td style="min-with: 100px;">TIPO PEP A UTILIZAR</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,12 +43,34 @@
                             <td>{{ '$'.money_format('%i',$piece->unit_price * $piece->quantity * $number)}}</td>
                             <td>{{$piece->pep}}</td>
                         </tr>
-
                     @endforeach
+                    
+                    <tr style="margin-top: 10px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px; margin-bottom: 5px;">TOTAL DE INVERSION PEP: <span style="color: #ff8a00">$50,000.00</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px; margin-bottom: 5px; border-top: #000000 solid 2px;">TOTAL DE COSTO PEP:<span style="color: #ff8a00">$50,000.00</span> </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <div class="row">
+            <div class="col-md-12" style="margin-top: 40px; font-family: Droid serif; font-size:18px; text-align: center; line-height: 15px;">
+               <p>
+                    <span style="margin: 0px 2px 0px 2px;">PASO <span style="color:rgb(255, 138, 0);">6</span> de 6</span>
+                    <span> |  Descarga un archivo de EXCEL con la lista de materiales para hacer tu pedido en SAP. </span>
+               </p>
+            </div>
+        </div>
     <div class="row">
         <div class="col-md-6 pull-left" style="margin-top: 40px; padding-left: 0px; margin-left:0px;">
             <a href="{{ URL::route('step.three') }}">
