@@ -17,7 +17,7 @@
             <span >{{ HTML::image( Session::get('barril')=='david' ? '/img/a-icon.png':'/img/b-icon.png') }}</span>
             <span style="font-size: 40px;"><strong>{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD ' }} <span style="font-size: 50px;">|</span></strong> </span>
            <strong> TU PEDIDO SON <span style=" color:#FF8A00;"> {{ $number }} </span> EQUIPOS <span style="color: #FF8A00;">{{ Session::get('barril')=='david' ? 'DAVID XL':'HEINEKEN EXTRA COLD' }}</span>
-            CON UN COSTO DE <span style="color: #FF8A00;">$ {{ money_format('%i',$total_cost) }} pesos</span> </strong>
+            CON UN COSTO DE <span style="color: #FF8A00;">$ {{ number_format($total_cost,2,'.',',') }} pesos</span> </strong>
         </div>
     </div>
     <div class="row" style="margin-top: 40px; text-align: center;">
@@ -38,9 +38,9 @@
                         <tr>
                             <td>{{$piece->sku}}</td>
                             <td>{{$piece->material}}</td>
-                            <td>{{ '$'. money_format('%i',$piece->unit_price) }}</td>
+                            <td>{{ '$'. number_format($piece->unit_price,2,'.',',') }}</td>
                             <td>{{$piece->quantity * $number}}</td>
-                            <td>{{ '$'.money_format('%i',$piece->unit_price * $piece->quantity * $number)}}</td>
+                            <td>{{ '$'.number_format($piece->unit_price * $piece->quantity * $number,2,'.',',')}}</td>
                             <td>{{$piece->pep}}</td>
                         </tr>
                     @endforeach
@@ -50,14 +50,14 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px; margin-bottom: 5px;">TOTAL DE INVERSION PEP: <span style="color: #ff8a00">$50,000.00</span></td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; text-align: right">TOTAL DE INVERSION PEP: <span style="color: #ff8a00">$ {{ number_format($inversion,2,'.',',') }}</span></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px; margin-bottom: 5px; border-top: #000000 solid 2px;">TOTAL DE COSTO PEP:<span style="color: #ff8a00">$50,000.00</span> </td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; border-top: #000000 solid 2px; text-align: right;">TOTAL DE COSTO PEP: <span style="color: #ff8a00">$ {{ number_format($gasto,2,'.',',') }}</span> </td>
                     </tr>
                 </tbody>
             </table>

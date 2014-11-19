@@ -3,15 +3,17 @@
         $(document).ready(function(){
             var barril = 'none';
             $('#david').click(function(){
-                $('#b').html("<img src='/img/heineken-extra-cold.png'>");
-                $('#a').html("<img src='/img/david-xl-hover.png'>");
+                $('#b').attr('style','');
+                $('#b').css('border','5px solid transparent;');
+                $('#a').attr('style','border: 5px solid #ff8a00;');
                 $('#continue').fadeIn('fast');
                 barril = 'david';
                 return false;
             });
             $('#heineken').click(function(){
-               $('#b').html("<img src='/img/heineken-extra-cold-hover.png'>");
-               $('#a').html("<img src='/img/david-xl.png'>");
+               $('#b').attr('style','border: 5px solid #ff8a00;');
+               $('#a').css('border','');
+               $('#a').css('border','5px solid transparent;');
                $('#continue').fadeIn('fast');
                barril = 'heineken';
                return false;
@@ -58,16 +60,16 @@
         <a href="" id="david">
         <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;" >
             <p style="margin-bottom: 50px;">{{ HTML::image('/img/a-icon.png') }}</p>
-            <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  DAVID XL</span></strong></p>
-            <p style="margin-bottom: 50px;" id="a">{{ HTML::image('/img/david-xl.png') }}</p>
+            <p style="margin-bottom: 50px;"><span></span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  DAVID XL</span></strong></p>
+            <p style="margin-bottom: 50px;" id="a">{{ HTML::image('/img/david-xl.png',null,['style'=>'padding: 50px 0px; border: 5px transparent solid;']) }}</p>
 
         </div>
         </a>
         <a href="#" id="heineken">
         <div class="col-md-6 col-lg-6 col-sm-6" style="text-align: center;" >
             <p style="margin-bottom: 50px;">{{ HTML::image('/img/b-icon.png') }}</p>
-            <p style="margin-bottom: 50px;"><span>{{ HTML::image('/img/plus.png') }}</span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  HEINEKEN EXTRA COLD</span></strong></p>
-            <p style="margin-bottom: 50px;" id="b">{{ HTML::image('/img/heineken-extra-cold.png') }}</p>
+            <p style="margin-bottom: 50px;"><span></span><strong><span style="font-weight:bold; color:rgb(255,138,0);">  HEINEKEN EXTRA COLD</span></strong></p>
+            <p style="margin-bottom: 50px;" id="b">{{ HTML::image('/img/heineken-extra-cold.png',null,['style'=>'padding: 50px 0px;border: 5px transparent solid;']) }}</p>
         </div>
         </a>
     </div>

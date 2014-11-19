@@ -64,22 +64,37 @@ class CCMController extends \BaseController
         if (Session::has('logo_one') && Session::has('number')) {
             $pieces = BarrelDetail::where('barrel_id', ((Session::get('barril') == 'david') ? 1 : 2))->get();
             $price = 0;
+            $inversion = 0;
+            $gasto = 0;
             $array = [];
             foreach ($pieces as $piece) {
                 if (explode('_', $piece->image)[0] == 'LENS' || explode('_', $piece->image)[0] == 'MANERAL') {
                     if (strtolower($piece->image) == strtolower(explode('_', $piece->image)[0] . '_' . Session::get('logo_one') . '.jpg') || strtolower($piece->image) == strtolower(explode('_', $piece->image)[0] . '_' . Session::get('logo_two') . '.jpg')) {
                         $price += $piece->unit_price * $piece->quantity * Session::get('number');
                         array_push($array, $piece);
+                        if ($piece->pep == 'Inversión') {
+                            $inversion += $piece->quantity * Session::get('number') * $piece->unit_price;
+                        } else {
+                            $gasto += $piece->quantity * Session::get('number') * $piece->unit_price;
+                        }
                     }
                 } else {
+                    if ($piece->pep == 'Inversión') {
+                        $inversion += $piece->quantity * Session::get('number') * $piece->unit_price;
+                    } else {
+                        $gasto += $piece->quantity * Session::get('number') * $piece->unit_price;
+                    }
                     $price += $piece->unit_price * $piece->quantity * Session::get('number');
                     array_push($array, $piece);
                 }
+
             }
             $this->layout->content = View::make('step_four', array(
                 'pieces' => $array,
                 'number' => Session::get('number'),
-                'total_cost' => $price
+                'total_cost' => $price,
+                'inversion' => $inversion,
+                'gasto' => $gasto
             ));
         } else {
             return Redirect::route('step.two');
@@ -98,18 +113,33 @@ class CCMController extends \BaseController
     {
         $pieces = BarrelDetail::where('barrel_id', ((Session::get('barril') == 'david') ? 1 : 2))->get();
         $price = 0;
-        $array = [['SKU', 'Material', 'Cantidad por equipo', 'Precio', 'Descripcion', 'Tipo de PEP a utilizar', 'Cantidad a ordenar', 'Presupuesto requerido']];
+        $inversion = 0;
+        $gasto = 0;
+        $array = [['SKU', 'MATERIAL', 'PRECIO UNITARIO', 'CANTIDAD A ORDENAR', 'PRESUPUESTO REQUERIDO', 'TIPO PEP A UTILIZAR']];
         foreach ($pieces as $piece) {
             if (explode('_', $piece->image)[0] == 'LENS' || explode('_', $piece->image)[0] == 'MANERAL') {
                 if (strtolower($piece->image) == strtolower(explode('_', $piece->image)[0] . '_' . Session::get('logo_one') . '.jpg') || strtolower($piece->image) == strtolower(explode('_', $piece->image)[0] . '_' . Session::get('logo_two') . '.jpg')) {
-                    array_push($array, [$piece->sku, $piece->material, $piece->quantity, $piece->unit_price, $piece->description, $piece->pep, $piece->quantity * Session::get('number'), $piece->quantity * Session::get('number') * $piece->unit_price]);
+                    array_push($array, [$piece->sku, $piece->material, number_format($piece->unit_price,2,'.',','), $piece->quantity * Session::get('number'), number_format($piece->quantity * Session::get('number') * $piece->unit_price,2,'.',',') , $piece->pep]);
+                    $price += $piece->unit_price * $piece->quantity * Session::get('number');
+                    if ($piece->pep == 'Inversión') {
+                        $inversion += $piece->quantity * Session::get('number') * $piece->unit_price;
+                    } else {
+                        $gasto += $$piece->quantity * Session::get('number') * $piece->unit_price;
+                    }
                 }
             } else {
-                array_push($array, [$piece->sku, $piece->material, $piece->quantity, $piece->unit_price, $piece->description, $piece->pep, $piece->quantity * Session::get('number'), $piece->quantity * Session::get('number') * $piece->unit_price]);
+                array_push($array, [$piece->sku, $piece->material, number_format($piece->unit_price,2,'.',','), $piece->quantity * Session::get('number'), number_format($piece->quantity * Session::get('number') * $piece->unit_price,2,'.',',') , $piece->pep]);
+                $price += $piece->unit_price * $piece->quantity * Session::get('number');
+                if ($piece->pep == 'Inversión') {
+                    $inversion += $piece->quantity * Session::get('number') * $piece->unit_price;
+                } else {
+                    $gasto += $piece->quantity * Session::get('number') * $piece->unit_price;
+                }
             }
         }
-        Excel::create('Listado de Materiales', function ($excel) use ($array) {
-            $excel->sheet('sheet 1', function ($sheet) use ($array) {
+        array_push($array,[],['','','','','TOTAL DE INVERSION PEP',number_format($inversion,2,'.',',')],['','','','','TOTAL DE COSTO PEP',number_format($gasto,2,'.',',')],['','','','','TOTAL FINAL',number_format($price,2,'.',',')]);
+        Excel::create('Listado de Materiales', function ($excel) use ($array,$inversion,$gasto) {
+            $excel->sheet('sheet 1', function ($sheet) use ($array,$inversion,$gasto) {
                 $sheet->fromArray($array);
             });
         })->download('xlsx');

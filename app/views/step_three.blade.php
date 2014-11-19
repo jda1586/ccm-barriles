@@ -3,6 +3,9 @@
         $(document).ready(function(){
             $('.table-link').click(function(){
                 var id = $(this).attr('id');
+                $('#modified').attr('style','background-color: transparent;').removeAttr('id').children('td').attr('style','color:white;');
+                $(this).attr('style','background-color:white;').attr('id','modified');
+                $(this).children('td').attr('style','color:#ff8a00');
                 $.ajax({
                     type: 'get',
                     url:"{{ URL::route('api.step.two.data') }}",
@@ -18,7 +21,7 @@
                     }
                     $('#piece_name').html(data['material']);
                     $('#cantidad').html(data['quantity']);
-                    $('#precio').html(data['unit_price']);
+                    $('#precio').html('$ '+data['unit_price']);
                     $('#descripcion').html(data['description']);
 
                 }).fail(function(data){
@@ -106,7 +109,7 @@
                 <div class="col-md-9" style="margin-top: 20px;">
                     <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} <span id="piece_name">{{ $pieces[0]->material }}</span></p>
                     <p>Cantidad del equipo: <span style="color: #ff8a00;" id="cantidad">{{ $pieces[0]->quantity }}</span></p>
-                    <p>Precio unitario: <span style="color: #ff8a00;" id="precio">{{ $pieces[0]->unit_price }}</span></p>
+                    <p>Precio unitario: <span style="color: #ff8a00;" id="precio"> $ {{ number_format($pieces[0]->unit_price,2,'.',',') }}</span></p>
                     <p>Descripcion: <span style="color: #ff8a00;" id="descripcion">{{ $pieces[0]->description }}</span></p>
                 </div>
                 <div class="col-md-3" style="margin-top: 20px;width:100px; height:auto;" id="image">

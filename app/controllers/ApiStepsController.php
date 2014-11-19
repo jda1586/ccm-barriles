@@ -39,6 +39,7 @@ class ApiStepsController extends \BaseController
     public function get_data()
     {
         $data = BarrelDetail::find(Input::get('id'));
+        $data->unit_price = number_format($data->unit_price,2,'.',',');
         return Response::json($data);
     }
 }
