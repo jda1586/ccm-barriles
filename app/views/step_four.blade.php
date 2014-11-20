@@ -50,14 +50,14 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; text-align: right">TOTAL DE INVERSION PEP: <span style="color: #ff8a00">$ {{ number_format($inversion,2,'.',',') }}</span></td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; text-align: right">TOTAL PEP DE INVERSIÓN: <span style="color: #ff8a00">$ {{ number_format($inversion,2,'.',',') }}</span></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; border-top: #000000 solid 2px; text-align: right;">TOTAL DE COSTO PEP: <span style="color: #ff8a00">$ {{ number_format($gasto,2,'.',',') }}</span> </td>
+                        <td colspan="2" style="background-color: white; color: #000000; padding: 0px 10px 0px 0px; margin-bottom: 5px; border-top: #000000 solid 2px; text-align: right;">TOTAL PEP DE COSTO: <span style="color: #ff8a00">$ {{ number_format($gasto,2,'.',',') }}</span> </td>
                     </tr>
                 </tbody>
             </table>

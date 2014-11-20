@@ -139,7 +139,7 @@ class CCMController extends \BaseController
                 }
             }
         }
-        array_push($array,[],['','','','','TOTAL DE INVERSION PEP',number_format($inversion,2,'.',',')],['','','','','TOTAL DE COSTO PEP',number_format($gasto,2,'.',',')],['','','','','TOTAL FINAL',number_format($price,2,'.',',')]);
+        array_push($array,[],['','','','','TOTAL PEP DE INVERSIÓN',number_format($inversion,2,'.',',')],['','','','','TOTAL PEP DE GASTO',number_format($gasto,2,'.',',')],['','','','','TOTAL FINAL',number_format($price,2,'.',',')]);
         Excel::create('Listado de Materiales', function ($excel) use ($array,$inversion,$gasto) {
             $excel->sheet('sheet 1', function ($sheet) use ($array,$inversion,$gasto) {
                 $sheet->fromArray($array);

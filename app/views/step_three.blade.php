@@ -99,26 +99,22 @@
             <div style="width: 480px; height: auto;" id="images_here" class="row">
                 <div class="col-md-12">
                 @if($pieces[0]->barrel_id == 1)
-                    {{ HTML::image('/img/david_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height:auto;']) }}
+                    {{ HTML::image('/img/david_pieces/DAVID XL.jpg',null,['style'=>'width:480px; height:auto;']) }}
                 @else
-                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->photo_number,null,['style'=>'width:480px; height:auto;']) }}
+                    {{ HTML::image('/img/heineken_pieces/HEINEKEN EXTRA COLD.jpg',null,['style'=>'width:480px; height:auto;']) }}
                 @endif
                 </div>
             </div>
             <div style="width: 480px; min-height: 200px; background-color: white; margin-left: 1px;" class="row">
                 <div class="col-md-12">
                 <div class="col-md-9" style="margin-top: 20px;">
-                    <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} <span id="piece_name">{{ $pieces[0]->material }}</span></p>
-                    <p>Cantidad del equipo: <span style="color: #ff8a00;" id="cantidad">{{ $pieces[0]->quantity }}</span></p>
-                    <p>Precio unitario: <span style="color: #ff8a00;" id="precio"> $ {{ number_format($pieces[0]->unit_price,2,'.',',') }}</span></p>
-                    <p>Descripcion: <span style="color: #ff8a00;" id="descripcion">{{ $pieces[0]->description }}</span></p>
+                    <p style="color:#ff8a00;  vertical-align:middle">{{ HTML::image('/img/seleccion.png',null,['style'=>' vertical-align:middle;']) }} <span id="piece_name"></span></p>
+                    <p>Cantidad del equipo: <span style="color: #ff8a00;" id="cantidad"></span></p>
+                    <p>Precio unitario: <span style="color: #ff8a00;" id="precio"> </span></p>
+                    <p>Descripcion: <span style="color: #ff8a00;" id="descripcion"></span></p>
                 </div>
                 <div class="col-md-3" style="margin-top: 20px;width:100px; height:auto;" id="image">
-                @if( $pieces[0]->barrel_id == 1 )
-                     {{ HTML::image('/img/david_pieces/'.$pieces[0]->image,null,['class'=>'pull-right','style'=>'width:100px; height:auto;']) }}
-                @else
-                    {{ HTML::image('/img/heineken_pieces/'.$pieces[0]->image,null,['class'=>'pull-right','style'=>'width:100px; height:auto;']) }}
-                @endif
+
                 </div>
                 </div>
             </div>
@@ -156,8 +152,14 @@
            </div>
            <!-- Modal -->
            <div class="modal fade" id="tools" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
+
                     <div class="row" style="margin-bottom: 10px;">
+                        <button class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
                         <div class="col-md-6">
                             <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
                                 <p style="font-size: 22px;">SIERRA</p>
