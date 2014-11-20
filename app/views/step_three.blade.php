@@ -156,8 +156,8 @@
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
                     <div class="modal-header" style="margin-bottom: 10px;">
                         <div class="col-md-6 col-md-offset-6">
-                             <button class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true" style="color: white; font-size: 50px;">x</span>
+                             <button class="close" data-dismiss="modal" type="button" style="background-color: white; width: 30px; height: 28px; padding-top:2px">
+                                <span aria-hidden="true" style="color: white; font-size: 20px;">x</span>
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
