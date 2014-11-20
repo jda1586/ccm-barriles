@@ -154,10 +154,10 @@
            <div class="modal fade" id="tools" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
-                    <div class="row">
+                    <div class="row" style="margin-bottom: 10px;">
                         <div class="col-md-6 col-md-offset-6">
                              <button class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true" style="color: white;">x</span>
+                                <span aria-hidden="true" style="color: white; font-size: 10px;"><i class="fa fa-times"></i></span>
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="col-md-6" style="background: url('/img/modal/tools_sierra.jpg');min-height: 200px; "></div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" sty>
                            <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
                                 <p style="font-size: 22px;">TALADRO</p>
                                 <p style="font-size: 16px;">Nos permite utilizar la sierra de perforación.</p>
