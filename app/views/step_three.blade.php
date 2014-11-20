@@ -157,7 +157,7 @@
                     <div class="modal-header" style="margin-bottom: 10px;">
                         <div class="col-md-6 col-md-offset-6">
                              <button class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true" style="color: white; font-size: 10px;">x</span>
+                                <span aria-hidden="true" style="color: white; font-size: 50px;">x</span>
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
