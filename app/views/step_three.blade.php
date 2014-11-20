@@ -155,11 +155,12 @@
 
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
                     <div class="row">
-                        <div class="col-md-6 col-md-offset-6"></div>
-                         <button class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true" style="color: white;">x</span>
-                            <span class="sr-only">Close</span>
-                        </button>
+                        <div class="col-md-6 col-md-offset-6">
+                             <button class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true" style="color: white;">x</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="row" style="margin-bottom: 10px;">
 
