@@ -154,10 +154,10 @@
            <div class="modal fade" id="tools" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
-                    <div class="row" style="margin-bottom: 10px;">
+                    <div class="modal-header" style="margin-bottom: 10px;">
                         <div class="col-md-6 col-md-offset-6">
                              <button class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true" style="color: white; font-size: 10px;"><i class="fa fa-times"></i></span>
+                                <span aria-hidden="true" style="color: white; font-size: 10px;">x</span>
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
