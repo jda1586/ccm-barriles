@@ -154,12 +154,14 @@
            <div class="modal fade" id="tools" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                <div style="max-width: 1024px; margin: 20px auto; font-family: Droid 300;">
-
-                    <div class="row" style="margin-bottom: 10px;">
-                        <button class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true">×</span>
+                    <div class="row">
+                         <button class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true" style="color: white;">X</span>
                             <span class="sr-only">Close</span>
                         </button>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+
                         <div class="col-md-6">
                             <div class="col-md-6" style="background-color: #80002d; min-height: 200px; text-align: center;  padding: 40px 5px 5px 2px;">
                                 <p style="font-size: 22px;">SIERRA</p>
