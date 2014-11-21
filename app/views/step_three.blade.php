@@ -3,8 +3,8 @@
         $(document).ready(function(){
             $('.table-link').click(function(){
                 var id = $(this).attr('id');
-                $('#modified').attr('style','background-color: transparent;').removeAttr('id').children('td').attr('style','color:white;');
-                $(this).attr('style','background-color:white;').attr('id','modified');
+                $('.modified').attr('style','background-color: transparent;').children('td').attr('style','color:white;');
+                $(this).attr('style','background-color:white;').attr('class','modified');
                 $(this).children('td').attr('style','color:#ff8a00');
                 $.ajax({
                     type: 'get',
@@ -26,7 +26,7 @@
 
                 }).fail(function(data){
                     alert( "Error de conexion" );
-                    $('#modified').attr('style','background-color: transparent;').removeAttr('id').children('td').attr('style','color:white;');
+                    $('.modified').attr('style','background-color: transparent;').removeAttr('id').children('td').attr('style','color:white;');
                 })
             })
             $('#tools').modal('hide');
