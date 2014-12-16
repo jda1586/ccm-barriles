@@ -99,7 +99,7 @@ class CCMController extends \BaseController
                 'gasto' => $gasto
             ));
         } else {
-            return Redirect::route('step.two');
+            return Redirect::route('step.three');
         }
     }
 
