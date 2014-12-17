@@ -15,10 +15,10 @@
 
     <div class="row">
         <div class="col-md-4 col-lg-4 col-sm-12" style="text-align: center; padding-top: 20px;">
-            <p><img src="/img/tutorial-icon.png"></p>
+            <p><img src="/img/tutorial-icon. saytitpng"></p>
 
             <p>
-                <a href="#" data-toggle="modal" data-target="#modal_video">
+                <a id="a_video" href="#" data-toggle="modal" data-target="#modal_video">
                     <img src="/img/tutorial.png">
                 </a>
             </p>
@@ -122,10 +122,13 @@
     <script>
         $(document).ready(function () {
             $("#modal_btn").trigger('click');
-            $("video").trigger('play');
+            $("#a_video").click(function () {
+                $("video").trigger('play');
+            });
+            $("video").focusout(function () {
+                $("video").trigger('pause');
+            });
         });
-        $("video").focusout(function () {
-            $("video").trigger('pause');
-        });
+
     </script>
 @stop
