@@ -125,7 +125,7 @@
             $("#a_video").click(function () {
                 $("video").trigger('play');
             });
-            $("video").focusout(function () {
+            $('#modal_video').on('hidden.bs.modal', function () {
                 $("video").trigger('pause');
             });
         });
