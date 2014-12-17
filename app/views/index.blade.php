@@ -18,7 +18,7 @@
             <p><img src="/img/tutorial-icon.png"></p>
 
             <p>
-                <a>
+                <a href="#" data-toggle="modal" data-target="#modal_video">
                     <img src="/img/tutorial.png">
                 </a>
             </p>
@@ -52,11 +52,11 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width: 90%;">
+        <div class="modal-dialog" style="width: 80%;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    {{--<button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>--}}
                     <h4 class="modal-title" id="myModalLabel"></h4>
                 </div>
                 <div class="modal-body">
@@ -92,11 +92,40 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modal_video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {{--<button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>--}}
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="background-color: #000000;">
+                    <video style="width: 100%;" controls>
+                        <source src="https://proddmst.blob.core.windows.net/assets/videoTutorial_CCM720p.mp4"
+                                type="video/mp4">
+                        <source src="https://proddmst.blob.core.windows.net/assets/videoTutorial_CCM720p.webm"
+                                type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 @section('script')
     <script>
         $(document).ready(function () {
             $("#modal_btn").trigger('click');
+            $("video").trigger('play');
+        });
+        $("video").focusout(function () {
+            $("video").trigger('pause');
         });
     </script>
 @stop
