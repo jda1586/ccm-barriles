@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="col-md-4 col-lg-4 col-sm-12" style="text-align: center; padding-top: 20px;">
-            <p><img src="/img/tutorial-icon. saytitpng"></p>
+            <p><img src="/img/tutorial-icon.png"></p>
 
             <p>
                 <a id="a_video" href="#" data-toggle="modal" data-target="#modal_video">
